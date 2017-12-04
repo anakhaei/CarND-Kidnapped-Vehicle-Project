@@ -78,8 +78,9 @@ public:
 	 * @param predicted Vector of predicted landmark observations
 	 * @param observations Vector of landmark observations
 	 */
-	void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations);
+	//void dataAssociation(std::vector<LandmarkObs> predicted, std::vector<LandmarkObs>& observations);
 	
+	int findNearestLandmark(double x, double y, const Map &map_landmarks);
 	/**
 	 * updateWeights Updates the weights for each particle based on the likelihood of the 
 	 *   observed measurements. 
@@ -121,6 +122,10 @@ public:
 	const bool initialized() const {
 		return is_initialized;
 	}
+
+	void printStatus();
+
+	void printWeights();
 };
 
 

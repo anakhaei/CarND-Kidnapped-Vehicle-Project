@@ -133,6 +133,7 @@ int main()
               highest_weight = particles[i].weight;
               best_particle = particles[i];
             }
+            //cout << "id "<< i << " , w = " << particles[i].weight << endl;
             weight_sum += particles[i].weight;
           }
           cout << "highest w " << highest_weight << endl;
@@ -151,6 +152,9 @@ int main()
           auto msg = "42[\"best_particle\"," + msgJson.dump() + "]";
           // std::cout << msg << std::endl;
           ws.send(msg.data(), msg.length(), uWS::OpCode::TEXT);
+
+          //double test;
+          //cin >> test;
         }
       }
       else
